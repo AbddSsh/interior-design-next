@@ -7,7 +7,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'translation-site.s3.amazonaws.com',
+        hostname: 'designapp1.s3.amazonaws.com',
         port: '',
       },
     ],

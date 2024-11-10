@@ -15,7 +15,7 @@ const TheHeader: React.FC<ILangPageProps> = async ({ lng }) => {
           <Link href={`/${lng}`}>
             <Image
               src={logo}
-              alt="logo Vip-perevod"
+              alt="logo"
               className={styles.logo_image}
               width={500}
               height={500}

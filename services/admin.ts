@@ -5,13 +5,10 @@ import { IText } from "@/types/user";
 
 export const Auth = async (username: string, password: string) => {
   try {
-    const { data } = await $host.post(
-      "/translation/api/authentication/token",
-     ({
-        username: username,
-        password: password,
-      })
-    );
+    const { data } = await $host.post("/design/api/authentication/token", {
+      username: username,
+      password: password,
+    });
     localStorage.setItem("token", data.access_token);
     localStorage.setItem("isAuth", "true");
     return data;
@@ -22,27 +19,35 @@ export const Auth = async (username: string, password: string) => {
   }
 };
 
-export const putPageSeo = async (seoId: number, title:string, description:string, keywords:string) => {
+export const putPageSeo = async (
+  seoId: number,
+  title: string,
+  description: string,
+  keywords: string
+) => {
   try {
-    const { data } = await $authHost.put(`/translation/api/page/seo`, [{
-      id: seoId,
-      title: title,
-      description: description,
-      keywords: keywords,
-    }]);
+    const { data } = await $authHost.put(`/design/api/page/seo`, [
+      {
+        id: seoId,
+        title: title,
+        description: description,
+        keywords: keywords,
+      },
+    ]);
     return data;
   } catch (error) {
     alert(`Ошибка... ${error}`);
   }
 };
 
-export const putContentText = async ( text: {
-  id: number
-  text: string,
-}[]) => {
+export const putContentText = async (
+  text: {
+    id: number;
+    text: string;
+  }[]
+) => {
   try {
-    const { data } = await $authHost.put("/translation/api/page/block/text",  text
-  );
+    const { data } = await $authHost.put("/design/api/page/block/text", text);
     return data;
   } catch (error) {
     alert(`Ошибка... ${error}`);
@@ -52,13 +57,13 @@ export const putContentText = async ( text: {
 export const putContentFile = async (id: number, formData: FormData) => {
   try {
     const { data } = await $authHost.put(
-      `/translation/api/page/block/file?file_id=${id}`,
+      `/design/api/page/block/file?file_id=${id}`,
       formData,
-     {
-       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       }
-    }
     );
     return data;
   } catch (error) {
@@ -66,21 +71,31 @@ export const putContentFile = async (id: number, formData: FormData) => {
   }
 };
 
-export const putContentAlt = async (alt: {
-  id: number
-  text: string,
-}[]) => {
+export const putContentAlt = async (
+  alt: {
+    id: number;
+    text: string;
+  }[]
+) => {
   try {
-    const { data } = await $authHost.put("/translation/api/page/block/file/alt", alt);
+    const { data } = await $authHost.put(
+      "/design/api/page/block/file/alt",
+      alt
+    );
     return data;
   } catch (error) {
     alert(`Ошибка... ${error}`);
   }
 };
 
-export const addBlock = async (sectionId: number, textRu?: string, textUz?: string, textEn?: string) => {
+export const addBlock = async (
+  sectionId: number,
+  textRu?: string,
+  textUz?: string,
+  textEn?: string
+) => {
   try {
-    const { data } = await $authHost.post("/translation/api/page/block", {
+    const { data } = await $authHost.post("/design/api/page/block", {
       section_id: sectionId,
       name: "admin's block",
       text: [
@@ -107,13 +122,13 @@ export const addBlock = async (sectionId: number, textRu?: string, textUz?: stri
 export const addFile = async (blockId: number, formData: FormData) => {
   try {
     const { data } = await $authHost.post(
-      `/translation/api/page/block/file?block_id=${blockId}`,
+      `/design/api/page/block/file?block_id=${blockId}`,
       formData,
       {
         headers: {
-         'Content-Type': 'application/x-www-form-urlencoded',
-       }
-     }
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      }
     );
     formData.delete("file");
     return data;
@@ -122,11 +137,14 @@ export const addFile = async (blockId: number, formData: FormData) => {
   }
 };
 
-export const addAlt = async (fileId: number, alt: {language: string, text: string}[]) => {
+export const addAlt = async (
+  fileId: number,
+  alt: { language: string; text: string }[]
+) => {
   try {
-    const { data } = await $authHost.post("/translation/api/page/block/file/alt", {
+    const { data } = await $authHost.post("/design/api/page/block/file/alt", {
       file_id: fileId,
-      alt: alt
+      alt: alt,
     });
     return data;
   } catch (error) {
@@ -136,9 +154,9 @@ export const addAlt = async (fileId: number, alt: {language: string, text: strin
 
 export const addText = async (blockId: number, texts: IText[]) => {
   try {
-    const { data } = await $authHost.post("/translation/api/page/block/text", {
+    const { data } = await $authHost.post("/design/api/page/block/text", {
       block_id: blockId,
-      text: texts
+      text: texts,
     });
     return data;
   } catch (error) {
@@ -149,7 +167,7 @@ export const addText = async (blockId: number, texts: IText[]) => {
 export const deleteBlock = async (blockId: number) => {
   try {
     const { data } = await $authHost.delete(
-      `/translation/api/page/block?block_id=${blockId}`
+      `/design/api/page/block?block_id=${blockId}`
     );
     return data;
   } catch (error) {
@@ -165,6 +183,6 @@ export const getRevalidate = async (path: string) => {
     );
     return response;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 };

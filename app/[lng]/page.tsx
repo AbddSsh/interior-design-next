@@ -1,10 +1,10 @@
 import { getData } from "@/services/getData";
-import FirstHome from "./components/firstHome";
-import SecondHome from "./components/secondHome";
-import ThirdHome from "./components/thirdHome";
-import FourthHome from "./components/fourthHome";
-import FifthHome from "./components/fifthHome";
-import SixthHome from "./components/sixthHome";
+import FirstHome from "./desing-components/firstHome";
+import SecondHome from "./desing-components/secondHome";
+import ThirdHome from "./desing-components/thirdHome";
+import FourthHome from "./desing-components/fourthHome";
+import FifthHome from "./desing-components/fifthHome";
+import SixthHome from "./desing-components/sixthHome";
 import SeventhHome from "./components/seventhHome";
 import { ILangPageProps } from "@/types/user";
 import { PAGE_ID } from "@/config";
@@ -37,9 +37,9 @@ export default async function Home({
       <TheHeader lng={lng} />
       <FirstHome section={response?.sections[0]} lng={lng} />
       <SecondHome section={response?.sections[1]} lng={lng} />
-      <ThirdHome section={response?.sections[2]} lng={lng} />
-      <FourthHome section={response?.sections[3]} lng={lng} />
-      <FifthHome lng={lng} />
+      <ThirdHome section={response?.sections[4]} lng={lng} />
+      <FourthHome section={response?.sections[1]} lng={lng} />
+      <FifthHome section={response?.sections[1]} lng={lng} />
       <SixthHome lng={lng} />
       <SeventhHome section={response?.sections[4]} lng={lng} />
       <TheFooter lng={lng} />

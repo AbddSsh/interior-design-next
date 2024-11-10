@@ -7,21 +7,22 @@ import { languages } from "../i18n/settings";
 import "./../styles/global.scss";
 
 export const metadata: Metadata = {
-  title: "Vip-perevod",
-  description: "Vip-perevod",
+  title: "Interior Design | Gulen",
+  description:
+    "Профессиональный дизайнер интерьера в Ташкенте | Interior Design | Gulen",
   metadataBase: new URL(process.env.NEXT_PUBLIC_API_BASE_URL || ""),
   openGraph: {
-    title: "Vip-perevod",
+    title: "Interior Design | Gulen",
     description:
-      "Vip-perevod - ваш надежный партнер в точных и оперативных переводческих услугах. От документов до сайтов, мы преодолеваем языковые барьеры с профессионализмом и точностью.",
+      "Профессиональный дизайнер интерьера в Ташкенте | Interior Design | Gulen",
     url: process.env.NEXT_PUBLIC_API_BASE_URL,
-    siteName: "Vip-perevod",
+    siteName: "interior design",
     images: [
       {
         url: "/logoOG.png",
         width: 800,
         height: 600,
-        alt: "Vip-perevod",
+        alt: "interior design",
       },
     ],
     locale: "uz-UZ",

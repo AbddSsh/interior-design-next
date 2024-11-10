@@ -1,8 +1,8 @@
 "use client";
 
+import { X } from "lucide-react";
 import { ILangPageProps } from "@/types/user";
 import { useEffect, useState } from "react";
-import { CloseBurgerIcon, OpenBurgerIcon } from "../../icons";
 import BurgerLanguage from "./burgerLanguage";
 import BurgerNavigation from "./burgerNavigation";
 import "./../../styles/Header.module.scss";
@@ -29,27 +29,26 @@ const Burger: React.FC<ILangPageProps> = ({ lng }) => {
   }, []);
 
   return (
-    <div>
-      <div className="burger">
-        <div className="burger-btn" onClick={handleBurger}>
-          <OpenBurgerIcon />
-        </div>
-        <div className={showBurger ? "burger-body active" : "burger-body"}>
-          <div className="burger-wrapper">
-            <div
-              style={{
-                position: "relative",
-                alignSelf: "end",
-              }}
-            >
-              <div className="burger-hide-btn" onClick={handleBurger}>
-                <CloseBurgerIcon />
-              </div>
+    <div className="burger">
+      <div className="burger-btn" onClick={handleBurger}>
+        <span></span>
+        <span></span>
+      </div>
+      <div className={showBurger ? "burger-body active" : "burger-body"}>
+        <div className="burger-wrapper">
+          <div
+            style={{
+              position: "relative",
+              alignSelf: "end",
+            }}
+          >
+            <div className="burger-hide-btn" onClick={handleBurger}>
+              <X width={30} height={30} stroke="#88C2CE" />
             </div>
-            <div className="burger__content">
-              <BurgerNavigation lng={lng} onChange={handleBurger} />
-              <BurgerLanguage lng={lng} />
-            </div>
+          </div>
+          <div className="burger__content">
+            <BurgerNavigation lng={lng} onChange={handleBurger} />
+            <BurgerLanguage lng={lng} />
           </div>
         </div>
       </div>
