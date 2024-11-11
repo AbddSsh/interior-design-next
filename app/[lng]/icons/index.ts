@@ -1,8 +1,4 @@
-export {FolderIcon} from "./folder"
-export {OptionFirstIcon} from "./optionFirstIcon"
-export {OptionSecondIcon} from "./optionSecondIcon"
-export {OptionThirdIcon} from "./optionThirdIcon"
-export {OptionFourthIcon} from "./optionFourthIcon"
-export {YesIcon} from "./yesIcon"
-export {FileIcon} from "./fileIcon"
-export {BasketIcon} from "./basketIcon"
+export { FolderIcon } from "./folder";
+export { YesIcon } from "./yesIcon";
+export { FileIcon } from "./fileIcon";
+export { BasketIcon } from "./basketIcon";

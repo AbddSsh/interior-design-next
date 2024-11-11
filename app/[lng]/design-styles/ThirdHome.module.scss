@@ -8,11 +8,13 @@
   @media (max-width: 992px) {
     margin-bottom: var(--margin-section-lg);
     padding-top: var(--margin-section-lg);
+    row-gap: 60px;
   }
 
   @media (max-width: 768px) {
     margin-bottom: var(--margin-section-md);
     padding-top: var(--margin-section-md);
+    row-gap: 40px;
   }
 
   @media (max-width: 376px) {
@@ -22,7 +24,7 @@
 
   .title {
     font-weight: 400;
-    line-height: 1;
+    line-height: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: var(--font-size-text-main-xl);
@@ -37,11 +39,11 @@
     }
 
     @media (max-width: 576px) {
-      font-size: var(--font-size-text-main-sm);
+      font-size: 20px;
     }
 
     @media (max-width: 376px) {
-      font-size: var(--font-size-text-main-xs);
+      font-size: 16px;
     }
   }
 
@@ -50,10 +52,19 @@
     grid-template: 1fr 1fr / 1fr 1fr 1fr;
     gap: 50px;
 
+    @media (max-width: 768px) {
+      grid-template: 1fr 1fr 1fr / 1fr 1fr;
+      gap: 30px;
+    }
+
     .partner {
       width: 100%;
       height: 100%;
       max-height: 6vw;
+
+      @media (max-width: 768px) {
+        max-height: 20vw;
+      }
 
       img {
         width: 100%;

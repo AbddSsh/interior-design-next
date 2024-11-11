@@ -1,9 +1,9 @@
 export enum scrollEnum {
-    services = "services",
-    aboutUs = "about_us",
-    contacts = "contacts",
-    clients = "clients",
-    form = "form",
+  services = "services",
+  aboutUs = "about_us",
+  contacts = "contacts",
+  projects = "projects",
+  form = "form",
 }
 
-export const SCROLL_OFFSET = 100
+export const SCROLL_OFFSET = 100;

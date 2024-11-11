@@ -1,7 +1,13 @@
 "use client";
 
 import { languages } from "@/app/i18n/settings";
-import { addAlt, addBlock, addFile, addText, getRevalidate } from "@/services/admin";
+import {
+  addAlt,
+  addBlock,
+  addFile,
+  addText,
+  getRevalidate,
+} from "@/services/admin";
 import { IBlock, IText } from "@/types/user";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -25,27 +31,12 @@ const ContentAdminAdd: React.FC<Props> = ({ block, sectionId, pageId }) => {
   const [addedFile, setAddedFile] = useState<{ formData: FormData } | null>(
     null
   );
-  const [addedAltStates, setAddedAltStates] = useState<IAlt[]>([]);
   const router = useRouter();
 
   const handleChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
     const formData = new FormData();
     formData.append("file", event.target.files![0]);
     setAddedFile({ formData });
-  };
-
-  const handleChangeAlt = (
-    lang: string,
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const text = event.target.value;
-    const newAddData: IAlt[] = addedAltStates.map((item) => {
-      if (item.language === lang) {
-        return { ...item, text: text };
-      }
-      return item;
-    });
-    setAddedAltStates(newAddData);
   };
 
   const handleChangeText = (
@@ -67,9 +58,7 @@ const ContentAdminAdd: React.FC<Props> = ({ block, sectionId, pageId }) => {
     event.preventDefault();
     if (block?.files[0]?.id && addedFile) {
       addBlock(sectionId).then((data: any) => {
-        addFile(data.block_id, addedFile.formData).then((data: any) =>
-          addAlt(data.file_id, addedAltStates)
-        );
+        addFile(data.block_id, addedFile.formData);
         if (block?.texts[0]?.id) {
           addText(data.block_id, addedTextStates);
         }
@@ -90,14 +79,6 @@ const ContentAdminAdd: React.FC<Props> = ({ block, sectionId, pageId }) => {
   };
 
   useEffect(() => {
-    if (block?.files[0]?.id) {
-      const firstTextData: IAlt[] = languages.map((language) => ({
-        language,
-        text: "",
-      }));
-      setAddedAltStates(firstTextData);
-    }
-
     if (block?.texts[0]?.id) {
       const ids = Array.from({ length: block.texts.length }, (_, i) => i);
       const firstTextData: IText[] = ids.flatMap((id) =>
@@ -122,21 +103,6 @@ const ContentAdminAdd: React.FC<Props> = ({ block, sectionId, pageId }) => {
                       onChange={(event) => handleChangeFile(event)}
                     />
                   </label>
-                  {languages.map((lang) => (
-                    <label key={lang}>
-                      <span>Add alt for image {lang}:</span>
-                      <input
-                        type="text"
-                        value={
-                          addedTextStates.find(
-                            (item) =>
-                              item?.id === index && item.language === lang
-                          )?.text || ""
-                        }
-                        onChange={(event) => handleChangeAlt(lang, event)}
-                      />
-                    </label>
-                  ))}
                 </div>
               ))}
             {block?.texts[0]?.id &&
@@ -169,8 +135,6 @@ const ContentAdminAdd: React.FC<Props> = ({ block, sectionId, pageId }) => {
               className={styles.changeBtn}
               disabled={
                 (block?.files[0]?.id && addedFile === null) ||
-                (block?.files[0]?.id &&
-                  addedAltStates.some((item) => item.text === "")) ||
                 (block?.texts[0]?.id &&
                   addedTextStates.some((item) => item.text === "")) ||
                 false

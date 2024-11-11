@@ -26,7 +26,7 @@ const BurgerNavigation: React.FC<BurgerNavigationProps> = ({
 
       window.scrollBy({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
@@ -35,27 +35,27 @@ const BurgerNavigation: React.FC<BurgerNavigationProps> = ({
     <nav className={styles.burger__navigation}>
       <div
         className={styles.tab}
-        onClick={() => scrollToSection(scrollEnum.services)}
-      >
-        <p>{t("Header.nav.services")}</p>
-      </div>
-      <div
-        className={styles.tab}
         onClick={() => scrollToSection(scrollEnum.aboutUs)}
       >
         <p>{t("Header.nav.about_us")}</p>
       </div>
       <div
         className={styles.tab}
-        onClick={() => scrollToSection(scrollEnum.contacts)}
+        onClick={() => scrollToSection(scrollEnum.services)}
       >
-        <p>{t("Header.nav.contacts")}</p>
+        <p>{t("Header.nav.services")}</p>
       </div>
       <div
         className={styles.tab}
-        onClick={() => scrollToSection(scrollEnum.clients)}
+        onClick={() => scrollToSection(scrollEnum.projects)}
       >
-        <p>{t("Header.nav.clients")}</p>
+        <p>{t("Header.nav.projects")}</p>
+      </div>
+      <div
+        className={styles.tab}
+        onClick={() => scrollToSection(scrollEnum.contacts)}
+      >
+        <p>{t("Header.nav.contacts")}</p>
       </div>
     </nav>
   );

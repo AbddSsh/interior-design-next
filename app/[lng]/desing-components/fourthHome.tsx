@@ -9,6 +9,7 @@ import { SolutionFirstIcon } from "../icons/solutionFirstIcon";
 import { SolutionSecondIcon } from "../icons/solutionSecondIcon";
 import { SolutionThirdIcon } from "../icons/solutionThirdIcon";
 import styles from "../design-styles/FourthHome.module.scss";
+import { scrollEnum } from "@/types/constansts";
 
 const FourthHome: React.FC<IHomePageProps> = ({
   section,
@@ -24,7 +25,7 @@ const FourthHome: React.FC<IHomePageProps> = ({
     <SolutionThirdIcon key="third" />,
   ];
   return (
-    <section className={`${styles.wrapper} container`}>
+    <section className={`${styles.wrapper} container`} id={scrollEnum.services}>
       <h2 className={styles.title}>{t("HomePage.FourthHome.title")}</h2>
       <motion.div
         custom={custom++}
@@ -38,30 +39,15 @@ const FourthHome: React.FC<IHomePageProps> = ({
             key={index}
             className={styles.solution}
           >
-            {index === 1 ? (
-              <>
-                <div className={styles.texts}>
-                  <p className={styles.solution__title}>
-                    {block?.texts[0]?.text}
-                  </p>
-                  <p className={styles.solution__description}>
-                    {block?.texts[1]?.text}
-                  </p>
-                </div>
-                <div className={styles.icon}>{icons[index]}</div>
-              </>
-            ) : (
-              <>
-                <div className={styles.icon}>{icons[index]}</div>
-                <div className={styles.texts}>
-                  <p className={styles.solution__title}>
-                    {block?.texts[0]?.text}
-                  </p>
-                  <p className={styles.solution__description}>
-                    {block?.texts[1]?.text}
-                  </p>
-                </div>
-              </>
+            <div className={styles.icon}>{icons[index]}</div>
+            <div className={styles.texts}>
+              <p className={styles.solution__title}>{block?.texts[0]?.text}</p>
+              <p className={styles.solution__description}>
+                {block?.texts[1]?.text}
+              </p>
+            </div>
+            {isAdmin && pageId && (
+              <ContentAdminEdit block={block} pageId={pageId} lng={lng} />
             )}
           </motion.div>
         ))}

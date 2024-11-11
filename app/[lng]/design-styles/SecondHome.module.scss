@@ -7,10 +7,16 @@
 
   @media (max-width: 992px) {
     margin-bottom: var(--margin-section-lg);
+    gap: 60px;
   }
 
   @media (max-width: 768px) {
     margin-bottom: var(--margin-section-md);
+    gap: 40px;
+  }
+
+  @media (max-width: 576px) {
+    gap: 20px;
   }
 
   @media (max-width: 376px) {
@@ -51,6 +57,17 @@
       justify-items: stretch;
       align-items: center;
 
+      @media (max-width: 768px) {
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        display: none;
+      }
+
       >span {
         color: var(--color-dark-grey);
         font-style: normal;
@@ -63,14 +80,6 @@
         }
 
         @media (max-width: 768px) {
-          font-size: 14px;
-        }
-
-        @media (max-width: 576px) {
-          font-size: 12px;
-        }
-
-        @media (max-width: 376px) {
           font-size: 10px;
         }
       }
@@ -87,11 +96,25 @@
     }
 
     .content__wrapper {
-      display: grid;
-      grid-template: 1fr / 0.8fr 1fr;
-      column-gap: 40px;
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
       align-items: center;
       opacity: 0;
+
+      @media (max-width: 992px) {
+        grid-template: none;
+        flex-direction: column-reverse;
+        gap: 60px;
+      }
+
+      @media (max-width: 768px) {
+        gap: 40px;
+      }
+    
+      @media (max-width: 576px) {
+        gap: 40px;
+      }
 
       &.no_hidden {
         opacity: 1;
@@ -109,10 +132,25 @@
         .big {
           margin-bottom: auto;
           width: 100%;
-          height: 35vw;
-          max-height: 450px;
+          height: 50vw;
+          max-height: 500px;
           border-radius: 999px;
           overflow: hidden;
+
+          @media (max-width: 992px) {
+            height: 70vw;
+            width: 70vw;
+            max-height: none;
+            margin-left: auto;
+            border: 3px solid var(--color-green);
+          }
+
+          @media (max-width: 376px) {
+            height: 85vw;
+            width: 85vw;
+            max-height: none;
+            margin-left: auto;
+          }
 
           &::after {
             content: "";
@@ -124,6 +162,10 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.2);
             border: 3px solid var(--color-green);
+
+            @media (max-width: 992px) {
+              display: none;
+            }
           }
 
           .image {
@@ -146,6 +188,26 @@
           border: 6px solid var(--color-green);
           overflow: hidden;
 
+          @media (max-width: 992px) {
+            bottom: -20px;
+            left: 0px;
+
+            height: 30vw;
+            width: 30vw;
+            max-height: none;
+            margin-left: auto;
+          }
+
+          @media (max-width: 376px) {
+            bottom: -10px;
+            left: 0px;
+
+            height: 30vw;
+            width: 30vw;
+            max-height: none;
+            margin-left: auto;
+          }
+
           .image {
             width: 100%;
             height: 100%;
@@ -158,16 +220,31 @@
         display: grid;
         grid-auto-flow: row;
         row-gap: 50px;
+        max-width: 40%;
+
+        @media (max-width: 992px) {
+          max-width: 100%;
+          gap: 60px;
+        }
+  
+        @media (max-width: 768px) {
+          gap: 40px;
+        }
+      
+        @media (max-width: 576px) {
+          gap: 20px;
+        }
 
         >p {
           font-size: var(--font-size-text-secondary-xl);
           font-weight: 400;
           color: var(--color-dark-grey);
-          line-height: 1.3;
+          line-height: normal;
           font-style: normal;
 
           @media (max-width: 992px) {
             font-size: var(--font-size-text-secondary-lg);
+            text-align: center;
           }
         
           @media (max-width: 768px) {
@@ -175,7 +252,7 @@
           }
         
           @media (max-width: 576px) {
-            font-size: var(--font-size-text-secondary-sm);
+            font-size: 12px;
           }
         }
 
@@ -203,6 +280,11 @@
             justify-content: center;
             align-items: center;
             gap: 15px;
+
+            @media (max-width: 576px) {
+              font-size: 12px;
+              padding: 15px 20px;
+            }
         
             &:hover {
               transform: scale(1.015);

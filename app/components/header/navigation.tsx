@@ -17,7 +17,7 @@ const TheNavigation: React.FC<ILangPageProps> = ({ lng }) => {
 
       window.scrollBy({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
@@ -44,9 +44,9 @@ const TheNavigation: React.FC<ILangPageProps> = ({ lng }) => {
       </div>
       <div
         className={styles.tab}
-        onClick={() => scrollToSection(scrollEnum.clients)}
+        onClick={() => scrollToSection(scrollEnum.projects)}
       >
-        <p>{t("Header.nav.clients")}</p>
+        <p>{t("Header.nav.projects")}</p>
       </div>
     </nav>
   );

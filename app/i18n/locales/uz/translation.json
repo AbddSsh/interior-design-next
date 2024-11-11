@@ -1,77 +1,66 @@
 {
-    "Header": {
-        "nav": {
-            "services": "Услуги",
-            "about_us": "О нас",
-            "contacts": "Контакты",
-            "clients": "Клиенты"
-          }
-    },
-    "Footer": {
-        "nav": {
-            "services": "Услуги",
-            "about_us": "О нас",
-            "contacts": "Контакты",
-            "clients": "Клиенты"
-          },
-        "contacts": {
-            "address": "г. Ташкент, Проспект Амира Тимура 99А.</br>Oриентир: м.Бодомзор.</br> Бизнес центр, 306 кабинет"
-        }
-    },
-    
-    "HomePage" : {
-        "FirstHome" : {
-            "orderButton" : "Заказать перевод",
-            "contactButton" : "Связаться с нами"
-        }, 
-        "SecondHome" : {
-            "title" : "Какие услуги мы предоставляем?",
-            "orderButton" : "Заказать перевод"
-        }, 
-        "ThirdHome" : {
-            "title": "Почему выбирают нас?",
-            "orderButton" : "Заказать перевод"
-        },
-        "FourthHome": {
-            "title": "Наши услуги",
-            "subtitle": "Вот еще некоторые наши возможности:"
-        },
-
-        "FifthHome" : {
-            "title": "Заказать перевод",
-            "name": "Ваше имя*",
-            "email": "Ваш E-mail",
-            "phoneNumber": "Ваш номер телефона*",
-            "files": {
-                "file": "Загрузите сюда любые файлы, которые необходимо рассмотреть",
-                "drag": "Перетащите файлы или",
-                "add": "Добавьте",
-                "formats": "Поддерживаемые форматы: JPEG, PNG, GIF, MP4, PDF, PSD, AI, Word, PPT"
-            },
-            "sendButton": "Отправить",
-          "alert": "Сообщение успешно доставлено. Спасибо за обращение!",
-            "error": "Ошибка при отправке письма. Пожалуйста, попробуйте снова."
-
-        },
-
-        "SixthHome": {
-            "title": "Как c нами связаться?",
-            "address": "г. Ташкент, Проспект Амира Тимура 99А.</br>Oриентир: м.Бодомзор.</br> Бизнес центр, 306 кабинет"
-        },
-
-        
-        "SeventhHome": {
-            "title": "Компании, которые доверяют нашим услугам"
-        }
-
-
-    },
-    "WhyPage": {
-        "SecondSection": {
-             "title": "Наши возможности"
-        },
-        "FourthSection": {
-            "title": "Среди наших проектов:"
-       }
+  "Header": {
+    "nav": {
+      "about_us": "Biz haqimizda",
+      "services": "Xizmatlar",
+      "projects": "Loyihalar",
+      "contacts": "Kontaktlar"
     }
+  },
+  "HomePage": {
+    "FirstHome": {
+      "first_title": {
+        "regular": "Sizdan",
+        "bold": "Orzu,"
+      },
+      "second_title": {
+        "regular": "Bizdan",
+        "bold": "Dizayn."
+      },
+      "description": {
+        "first": "Interyer dizaynlar",
+        "second": "Gulandoz Ismailova dan"
+      }
+    },
+    "SecondHome": {
+      "title": "Biz haqimizda",
+      "categories": {
+        "economy": "Resurslarni tejash",
+        "author": "Muallif nazorati",
+        "result": "Natija kafolati"
+      },
+      "orderButton": "Loyihangiz haqida ma'lumot bering"
+    },
+    "ThirdHome": {
+      "title": "Bizning asosiy yetkazib hamkorlarimiz"
+    },
+    "FourthHome": {
+      "title": "Bizning yechimlarimiz"
+    },
+    "FifthHome": {
+      "title": "Loyihalar",
+      "description": "Men shunchaki dizayn loyihasini yaratmayman - uni jamoam bilan birgalikda har bir detalni ishlab chiqib, amalga oshiraman. Birinchi g'ishtli qurilish bo'linmalaridan tortib, toza to'shakka qadar, gullar vazasi va bo'sh joyni to'ldiradigan nozik hid. Biz har bir teginish sizning shaxsiyatingizni aks ettirishi va siz qaytib kelmoqchi bo'lgan muhit yaratishiga intilamiz."
+    },
+    "SixthHome": {
+      "title": "Buyurtma berishga tayyormisiz?",
+      "subtitle": "So'rov qoldiring va biz sizning orzuingizdagi loyihani amalga oshiramiz!",
+      "name": "Ismingiz*",
+      "email": "E-mail",
+      "phoneNumber": "Telefon raqamingiz*",
+      "files": {
+        "file": "Ko'rib chiqish kerak bo'lgan fayllarni shu yerga yuklang",
+        "drag": "Fayllarni sudrab yoki",
+        "add": "Qo'shish",
+        "formats": "Formatlar: JPEG, PNG, GIF, MP4, PDF, PSD, AI, Word, PPT"
+      },
+      "sendButton": "Jo'natish",
+      "alert": "Xabar muvaffaqiyatli yetkazib berildi. Murojaat qilganingiz uchun tashakkur!",
+      "error": "Email yuborishda xatolik yuz berdi. Iltimos, qayta urinib koʻring."
+    },
+
+    "SeventhHome": {
+      "title": "Kontaktlar",
+      "address": "Toshkent, Salar yo'l ko'chasi, 69"
+    }
+  }
 }

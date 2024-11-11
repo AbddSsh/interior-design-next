@@ -1,77 +1,66 @@
 {
-    "Header": {
-        "nav": {
-            "services": "Услуги",
-            "about_us": "О нас",
-            "contacts": "Контакты",
-            "clients": "Клиенты"
-          }
-    },
-    "Footer": {
-        "nav": {
-            "services": "Услуги",
-            "about_us": "О нас",
-            "contacts": "Контакты",
-            "clients": "Клиенты"
-          },
-        "contacts": {
-            "address": "г. Ташкент, Проспект Амира Тимура 99А.</br>Oриентир: м.Бодомзор.</br> Бизнес центр, 306 кабинет"
-        }
-    },
-    
-    "HomePage" : {
-        "FirstHome" : {
-            "orderButton" : "Заказать перевод",
-            "contactButton" : "Связаться с нами"
-        }, 
-        "SecondHome" : {
-            "title" : "Какие услуги мы предоставляем?",
-            "orderButton" : "Заказать перевод"
-        }, 
-        "ThirdHome" : {
-            "title": "Почему выбирают нас?",
-            "orderButton" : "Заказать перевод"
-        },
-        "FourthHome": {
-            "title": "Наши услуги",
-            "subtitle": "Вот еще некоторые наши возможности:"
-        },
-
-        "FifthHome" : {
-            "title": "Заказать перевод",
-            "name": "Ваше имя*",
-            "email": "Ваш E-mail",
-            "phoneNumber": "Ваш номер телефона*",
-            "files": {
-                "file": "Загрузите сюда любые файлы, которые необходимо рассмотреть",
-                "drag": "Перетащите файлы или",
-                "add": "Добавьте",
-                "formats": "Поддерживаемые форматы: JPEG, PNG, GIF, MP4, PDF, PSD, AI, Word, PPT"
-            },
-            "sendButton": "Отправить",
-          "alert": "Сообщение успешно доставлено. Спасибо за обращение!",
-            "error": "Ошибка при отправке письма. Пожалуйста, попробуйте снова."
-
-        },
-
-        "SixthHome": {
-            "title": "Как c нами связаться?",
-            "address": "г. Ташкент, Проспект Амира Тимура 99А.</br>Oриентир: м.Бодомзор.</br> Бизнес центр, 306 кабинет"
-        },
-
-        
-        "SeventhHome": {
-            "title": "Компании, которые доверяют нашим услугам"
-        }
-
-
-    },
-    "WhyPage": {
-        "SecondSection": {
-             "title": "Наши возможности"
-        },
-        "FourthSection": {
-            "title": "Среди наших проектов:"
-       }
+  "Header": {
+    "nav": {
+      "about_us": "About us",
+      "services": "Services",
+      "projects": "Projects",
+      "contacts": "Contacts"
     }
+  },
+  "HomePage": {
+    "FirstHome": {
+      "first_title": {
+        "regular": "Your",
+        "bold": "Dream,"
+      },
+      "second_title": {
+        "regular": "Our",
+        "bold": "Design."
+      },
+      "description": {
+        "first": "Interiors from",
+        "second": "Gulandoz Ismailova"
+      }
+    },
+    "SecondHome": {
+      "title": "About us",
+      "categories": {
+        "economy": "Saving resources",
+        "author": "Author's supervision",
+        "result": "Result guarantee"
+      },
+      "orderButton": "Tell us about project"
+    },
+    "ThirdHome": {
+      "title": "Our main suppliers and partners"
+    },
+    "FourthHome": {
+      "title": "Our solutions"
+    },
+    "FifthHome": {
+      "title": "Projects",
+      "description": "I don’t just create a design project - I bring it into reality together with my team, working out every detail. From the first brick building partitions to a neatly made bed, a vase of flowers and a subtle aroma filling the space. We strive to ensure that every touch reflects your personality and creates an atmosphere you will want to return to."
+    },
+    "SixthHome": {
+      "title": "Ready to order?",
+      "subtitle": "Leave a request and we will make your dream project come true!",
+      "name": "Your name*",
+      "email": "Your e-mail",
+      "phoneNumber": "Your phone number*",
+      "files": {
+        "file": "Upload any files you need to review here",
+        "drag": "Drag and drop files or",
+        "add": "Add",
+        "formats": "Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD, AI, Word, PPT"
+      },
+      "sendButton": "Send",
+      "alert": "The message was successfully delivered. Thanks for reaching out!",
+      "error": "Error sending email. Please try again."
+    },
+
+    "SeventhHome": {
+      "title": "Contacts",
+      "address": "Tashkent, Salar yol str., 69"
+    }
+  }
 }

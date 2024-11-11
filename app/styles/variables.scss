@@ -1,4 +1,4 @@
-:root{
+:root {
     /* colors */
     --color-white: #fff;
     --color-black: black;
@@ -9,11 +9,15 @@
     --language-active: #fff;
     --color-green: #88C2CE;
 
-        /* Breakpoint constants */
-    --breakpoint-xl: 1344px; /* Extra Large */
-    --breakpoint-lg: 992px; /* Large */
-    --breakpoint-md: 768px; /* Medium */
-    --breakpoint-xs: 376px; /* Extra Small */
+    /* Breakpoint constants */
+    --breakpoint-xl: 1344px;
+    /* Extra Large */
+    --breakpoint-lg: 992px;
+    /* Large */
+    --breakpoint-md: 768px;
+    /* Medium */
+    --breakpoint-xs: 376px;
+    /* Extra Small */
 
     /* Контейнерные отступы */
     /* Контейнерные отступы для Extra Large */
@@ -43,37 +47,37 @@
 
 
 
-     /* Extra Large (XL) */
-  --font-size-title-main-xl: 44px;
-  --font-size-subtitle-main-xl: 36px;
-  --font-size-title-secondary-xl: 18px;
-  --font-size-option-item-xl: 20px;
-  --font-size-text-main-xl: 24px;
-  --font-size-text-secondary-xl: 16px;
-  --margin-section-xl: 100px;
+    /* Extra Large (XL) */
+    --font-size-title-main-xl: 44px;
+    --font-size-subtitle-main-xl: 36px;
+    --font-size-title-secondary-xl: 18px;
+    --font-size-option-item-xl: 20px;
+    --font-size-text-main-xl: 24px;
+    --font-size-text-secondary-xl: 16px;
+    --margin-section-xl: 100px;
 
-  /* Large (LG) */
-  --font-size-title-main-lg: 36px;
-  --font-size-subtitle-main-lg: 28px;
-  --font-size-title-secondary-lg: 16px;
-  --font-size-option-item-lg: 14px;
-  --font-size-text-main-lg: 20px;
-  --font-size-text-secondary-lg: 14px;
-  --margin-section-lg: 80px;
+    /* Large (LG) */
+    --font-size-title-main-lg: 36px;
+    --font-size-subtitle-main-lg: 28px;
+    --font-size-title-secondary-lg: 16px;
+    --font-size-option-item-lg: 14px;
+    --font-size-text-main-lg: 20px;
+    --font-size-text-secondary-lg: 14px;
+    --margin-section-lg: 80px;
 
-  /* Medium (MD) */
-  --font-size-title-main-md: 24px;
-  --font-size-subtitle-main-md: 20px;
-  --font-size-title-secondary-md: 16px;
-  --font-size-option-item-md: 16px;
-  --font-size-text-main-md: 14px;
-  --font-size-text-secondary-md: 14px;
-  --margin-section-md: 60px;
+    /* Medium (MD) */
+    --font-size-title-main-md: 24px;
+    --font-size-subtitle-main-md: 20px;
+    --font-size-title-secondary-md: 16px;
+    --font-size-option-item-md: 16px;
+    --font-size-text-main-md: 14px;
+    --font-size-text-secondary-md: 14px;
+    --margin-section-md: 60px;
 
-  /* Extra Small (XS) */
-  --font-size-title-main-xs: 24px;
-  --font-size-subtitle-main-xs: 20px;
-  --font-size-title-secondary-xs: 14px;
-  --font-size-text-secondary-xs: 14px;
-  --margin-section-xs: 40px;
+    /* Extra Small (XS) */
+    --font-size-title-main-xs: 24px;
+    --font-size-subtitle-main-xs: 20px;
+    --font-size-title-secondary-xs: 14px;
+    --font-size-text-secondary-xs: 14px;
+    --margin-section-xs: 40px;
 }

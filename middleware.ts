@@ -9,7 +9,7 @@ export const config = {
   matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)"],
 };
 
-export async  function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   let lng;
   if (req.cookies.has(cookieName))
     lng = acceptLanguage.get(req.cookies.get(cookieName)!.value);
@@ -31,10 +31,16 @@ export async  function middleware(req: NextRequest) {
 
   // Add CORS headers to the response
   const response = NextResponse.next();
-  response.headers.append('Access-Control-Allow-Credentials', 'true');
-  response.headers.append('Access-Control-Allow-Origin', '*'); // Allow from any origin
-  response.headers.append('Access-Control-Allow-Methods', 'GET, DELETE, PATCH, POST, PUT');
-  response.headers.append('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+  response.headers.append("Access-Control-Allow-Credentials", "true");
+  response.headers.append("Access-Control-Allow-Origin", "*"); // Allow from any origin
+  response.headers.append(
+    "Access-Control-Allow-Methods",
+    "GET, DELETE, PATCH, POST, PUT"
+  );
+  response.headers.append(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+  );
 
   // const res = await fetch(req.url);
   // if (res.status === 404) {

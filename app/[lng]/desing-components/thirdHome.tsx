@@ -24,7 +24,7 @@ const ThirdHome: React.FC<IHomePageProps> = ({
         variants={MAIN_PAGE_ANIMATION.animationUp}
         className={styles.carousel}
       >
-        {section?.blocks?.slice(1).map((block, index) => (
+        {section?.blocks?.map((block, index) => (
           <div key={index} className={styles.partner}>
             <Image
               className={styles.image}
@@ -32,6 +32,7 @@ const ThirdHome: React.FC<IHomePageProps> = ({
               alt={block?.files[0]?.alts[0]?.text || "image"}
               width={500}
               height={500}
+              priority
             />
             {isAdmin && pageId && (
               <div>

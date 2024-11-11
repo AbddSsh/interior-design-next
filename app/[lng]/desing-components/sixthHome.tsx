@@ -86,149 +86,156 @@ const SixthHome: React.FC<ILangPageProps> = ({ lng }) => {
     } else {
       await sendMail(data.name, data.phoneNumber, data.email);
     }
-    alert(t("HomePage.FifthHome.alert"));
+    alert(t("HomePage.SixthHome.alert"));
     reset(); // Сброс формы после успешной отправки
   };
 
   let custom = 0;
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={MAIN_PAGE_ANIMATION.viewport}
-      id={scrollEnum.form}
-      className={`${styles.wrapper} container`}
-    >
-      <motion.h2
-        custom={custom++}
-        variants={MAIN_PAGE_ANIMATION.animationVision}
-        className={styles.title}
+    <div className="container">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={MAIN_PAGE_ANIMATION.viewport}
+        id={scrollEnum.form}
+        className={styles.wrapper}
       >
-        {t("HomePage.FifthHome.title")}
-      </motion.h2>
-      <motion.div custom={custom++} variants={MAIN_PAGE_ANIMATION.animationUp}>
-        <form
-          action=""
-          className={styles.form__wrapper}
-          onSubmit={handleSubmit(onSubmit)}
+        <motion.h2
+          custom={custom++}
+          variants={MAIN_PAGE_ANIMATION.animationVision}
+          className={styles.title}
         >
-          <label className={styles.form__title}>
-            <span className={styles.text}>{t("HomePage.FifthHome.name")}</span>
-            <input
-              className={styles.form__input}
-              placeholder="Gomer"
-              {...register("name", {
-                required: true,
-                minLength: 1,
-              })}
-            />
-          </label>
-          <label className={styles.form__title}>
-            <span className={styles.text}>{t("HomePage.FifthHome.email")}</span>
-            <input
-              className={styles.form__input}
-              placeholder="name@domain.com"
-              {...register("email", {
-                required: true,
-                minLength: 1,
-                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              })}
-            />
-          </label>
-          <label className={styles.form__title}>
-            <span className={styles.text}>
-              {t("HomePage.FifthHome.phoneNumber")}
-            </span>
-            <input
-              className={styles.form__input}
-              defaultValue="+998"
-              type="tel"
-              maxLength={13}
-              inputMode="numeric"
-              pattern="\+998\d{9}"
-              onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
-                e.target.value = e.target.value.replace(/[^\d+]/g, "");
-              }}
-              {...register("phoneNumber", {
-                required: true,
-                minLength: 1,
-                maxLength: 13,
-                pattern: /^\+998\d{9}$/,
-              })}
-            />
-          </label>
-          <label className={styles.form__title}>
-            <span className={styles.text}>
-              {t("HomePage.FifthHome.files.file")}
-            </span>
-            <div
-              className={`${styles.add_files_wrapper} ${
-                dragActive ? styles.drag : ""
-              }`}
-              onReset={handleReset}
-              onDragEnter={handleDrag}
-              onDragOver={handleDrag}
-              onDragLeave={handleLive}
-              onDrop={handleDrop}
-            >
-              <div className={styles.files__wrapper}>
-                {files ? (
-                  <div className={styles.items}>
-                    <div className={styles.item}>
-                      <div className={styles.item__left}>
-                        <FileIcon />
-                        <div className={styles.item__text}>
-                          <p>{fileInfo?.name}</p>
-                          <span>
-                            {formatFileSize(parseFloat(fileInfo?.size!))}
-                          </span>
+          {t("HomePage.SixthHome.title")}
+        </motion.h2>
+        <motion.div
+          custom={custom++}
+          variants={MAIN_PAGE_ANIMATION.animationUp}
+          className={styles.form__wrapper}
+        >
+          <p className={styles.subtitle}>{t("HomePage.SixthHome.subtitle")}</p>
+          <form action="" onSubmit={handleSubmit(onSubmit)}>
+            <label className={styles.form__title}>
+              <span className={styles.text}>
+                {t("HomePage.SixthHome.name")}
+              </span>
+              <input
+                className={styles.form__input}
+                placeholder="Gomer"
+                {...register("name", {
+                  required: true,
+                  minLength: 1,
+                })}
+              />
+            </label>
+            <label className={styles.form__title}>
+              <span className={styles.text}>
+                {t("HomePage.SixthHome.email")}
+              </span>
+              <input
+                className={styles.form__input}
+                placeholder="name@domain.com"
+                {...register("email", {
+                  required: true,
+                  minLength: 1,
+                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                })}
+              />
+            </label>
+            <label className={styles.form__title}>
+              <span className={styles.text}>
+                {t("HomePage.SixthHome.phoneNumber")}
+              </span>
+              <input
+                className={styles.form__input}
+                defaultValue="+998"
+                type="tel"
+                maxLength={13}
+                inputMode="numeric"
+                pattern="\+998\d{9}"
+                onInput={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  e.target.value = e.target.value.replace(/[^\d+]/g, "");
+                }}
+                {...register("phoneNumber", {
+                  required: true,
+                  minLength: 1,
+                  maxLength: 13,
+                  pattern: /^\+998\d{9}$/,
+                })}
+              />
+            </label>
+            <label className={styles.form__title}>
+              <span className={styles.text}>
+                {t("HomePage.SixthHome.files.file")}
+              </span>
+              <div
+                className={`${styles.add_files_wrapper} ${
+                  dragActive ? styles.drag : ""
+                }`}
+                onReset={handleReset}
+                onDragEnter={handleDrag}
+                onDragOver={handleDrag}
+                onDragLeave={handleLive}
+                onDrop={handleDrop}
+              >
+                <div className={styles.files__wrapper}>
+                  {files ? (
+                    <div className={styles.items}>
+                      <div className={styles.item}>
+                        <div className={styles.item__left}>
+                          <FileIcon />
+                          <div className={styles.item__text}>
+                            <p>{fileInfo?.name}</p>
+                            <span>
+                              {formatFileSize(parseFloat(fileInfo?.size!))}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                      <div className={styles.item__right}>
-                        <div style={{ padding: "5px" }}>
-                          <YesIcon />
-                        </div>
-                        <div
-                          style={{ cursor: "pointer", padding: "5px 10px" }}
-                          onClick={(event) => handleRemoveFile(event)}
-                        >
-                          <BasketIcon />
+                        <div className={styles.item__right}>
+                          <div style={{ padding: "5px" }}>
+                            <YesIcon />
+                          </div>
+                          <div
+                            style={{ cursor: "pointer", padding: "5px 10px" }}
+                            onClick={(event) => handleRemoveFile(event)}
+                          >
+                            <BasketIcon />
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ) : (
-                  <>
-                    <FolderIcon />
-                    <div className={styles.files__wrapper__input}>
-                      <div className={styles.files__wrapper__text}>
-                        <div className={styles.share}>
-                          <p>{t("HomePage.FifthHome.files.drag")}</p>
-                          <p className={styles.press}>
-                            {t("HomePage.FifthHome.files.add")}
-                          </p>
+                  ) : (
+                    <>
+                      <FolderIcon />
+                      <div className={styles.files__wrapper__input}>
+                        <div className={styles.files__wrapper__text}>
+                          <div className={styles.share}>
+                            <p>{t("HomePage.SixthHome.files.drag")}</p>
+                            <p className={styles.press}>
+                              {t("HomePage.SixthHome.files.add")}
+                            </p>
+                          </div>
+                          <span>{t("HomePage.SixthHome.files.formats")}</span>
                         </div>
-                        <span>{t("HomePage.FifthHome.files.formats")}</span>
                       </div>
-                    </div>
-                    <input
-                      type="file"
-                      className={styles.files}
-                      multiple={true}
-                      onChange={handleChange}
-                      accept=".jpeg, .jpg, .png, .gif, .mp4, .pdf, .psd, .ai, .doc, .docx, .ppt, .pptx"
-                    />
-                  </>
-                )}
+                      <input
+                        type="file"
+                        className={styles.files}
+                        multiple={true}
+                        onChange={handleChange}
+                        accept=".jpeg, .jpg, .png, .gif, .mp4, .pdf, .psd, .ai, .doc, .docx, .ppt, .pptx"
+                      />
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          </label>
-          <button type="submit" className={styles.send}>
-            {t("HomePage.FifthHome.sendButton")}
-          </button>
-        </form>
+            </label>
+            <button type="submit" className={styles.send}>
+              {t("HomePage.SixthHome.sendButton")}
+            </button>
+          </form>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

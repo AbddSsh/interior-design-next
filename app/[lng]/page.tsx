@@ -5,11 +5,10 @@ import ThirdHome from "./desing-components/thirdHome";
 import FourthHome from "./desing-components/fourthHome";
 import FifthHome from "./desing-components/fifthHome";
 import SixthHome from "./desing-components/sixthHome";
-import SeventhHome from "./components/seventhHome";
 import { ILangPageProps } from "@/types/user";
 import { PAGE_ID } from "@/config";
 import { TheHeader } from "../components/header/header";
-import { TheFooter } from "../components/footer/footer";
+import SeventhHome from "./desing-components/seventhHome";
 
 export async function generateMetadata({
   params: { lng },
@@ -35,14 +34,13 @@ export default async function Home({
   return (
     <>
       <TheHeader lng={lng} />
-      <FirstHome section={response?.sections[0]} lng={lng} />
-      <SecondHome section={response?.sections[1]} lng={lng} />
-      <ThirdHome section={response?.sections[4]} lng={lng} />
-      <FourthHome section={response?.sections[1]} lng={lng} />
-      <FifthHome section={response?.sections[1]} lng={lng} />
+      <FirstHome lng={lng} />
+      <SecondHome section={response?.sections[0]} lng={lng} />
+      <ThirdHome section={response?.sections[1]} lng={lng} />
+      <FourthHome section={response?.sections[2]} lng={lng} />
+      <FifthHome section={response?.sections[3]} lng={lng} />
       <SixthHome lng={lng} />
-      <SeventhHome section={response?.sections[4]} lng={lng} />
-      <TheFooter lng={lng} />
+      <SeventhHome lng={lng} />
     </>
   );
 }

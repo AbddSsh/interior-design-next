@@ -3,6 +3,7 @@
   .logo_image_wrapper {
     display: grid;
     align-items: center;
+    cursor: pointer;
 
     .logo_image {
       width: 72px;
@@ -121,9 +122,14 @@
       justify-content: center;
       padding: 5px;
       cursor: pointer;
-      height: 30px;
-      width: 30px;
+      height: 50px;
+      width: 50px;
       transition: transform 300ms ease;
+
+      p { 
+        line-height: 1;
+        font-size: 20px;
+      }
 
       &:hover {
         border: 1.5px solid var(--color-green);
@@ -212,6 +218,13 @@
   grid-auto-flow: row;
   row-gap: 65px;
   justify-items: center;
+  padding-top: 50px;
+
+  .tab {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--color-white);
+  }
 }
 
 

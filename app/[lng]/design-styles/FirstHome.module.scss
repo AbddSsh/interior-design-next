@@ -33,20 +33,23 @@
       .texts {
         display: grid;
         grid-auto-flow: row;
-        row-gap: 25px;
+        gap: 10px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
+        width: 100%;
+        justify-content: center;
 
         .title {
           font-style: normal;
-          font-weight: 700;
-          line-height: normal;
+          font-weight: 400;
+          line-height: 1;
           color: var(--color-white);
           font-size: var(--font-size-title-main-xl);
           text-transform: uppercase;
+          text-align: center;
 
           @media (max-width: 992px) {
             font-size: var(--font-size-title-main-lg);
@@ -59,28 +62,29 @@
           @media (max-width: 376px) {
             font-size: var(--font-size-title-main-xs);
           }
-        }
 
-        .text {
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          color: var(--color-white);
-          font-size: var(--font-size-title-secondary-xl);
-          text-align: center;
-
-          @media (max-width: 992px) {
-            font-size: var(--font-size-title-secondary-lg);
-          }
-
-          @media (max-width: 768px) {
-            font-size: var(--font-size-title-secondary-md);
-          }
-
-          @media (max-width: 376px) {
-            font-size: var(--font-size-title-secondary-xs);
+          span {
+            font-weight: 700;
           }
         }
+
+        div {
+          margin-top: 10px;
+
+          .text {
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: var(--color-white);
+            font-size: 14px;
+            text-align: center;
+  
+            @media (max-width: 768px) {
+              font-size: 10px;
+            }
+          }
+        }
+
 
       }
 
@@ -94,6 +98,20 @@
       overflow: hidden;
       position: relative;
 
+      @media (max-width: 992px) {
+        border-radius: 100px;
+      }
+
+      @media (max-width: 768px) {
+        border-radius: 80px;
+        height: 70vw;
+      }
+
+      @media (max-width: 576px) {
+        border-radius: 60px;
+        height: 120vw;
+      }
+
       &::after {
         content: "";
         position: absolute;
@@ -104,9 +122,16 @@
         background: rgba(0, 0, 0, 0.25);
       }
 
-      @media (max-width: 992px) {}
-
-      @media (max-width: 768px) {}
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("./../../../public/first-home-bg.png") center;
+        background-size: cover;
+      }
 
       .image {
         object-fit: cover;

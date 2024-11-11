@@ -1,10 +1,9 @@
 "use client";
 
-import FirstHome from "@/app/[lng]/components/firstHome";
-import FourthHome from "@/app/[lng]/components/fourthHome";
-import SecondHome from "@/app/[lng]/components/secondHome";
-import SeventhHome from "@/app/[lng]/components/seventhHome";
-import ThirdHome from "@/app/[lng]/components/thirdHome";
+import SecondHome from "@/app/[lng]/desing-components/secondHome";
+import ThirdHome from "@/app/[lng]/desing-components/thirdHome";
+import FourthHome from "@/app/[lng]/desing-components/fourthHome";
+import FifthHome from "@/app/[lng]/desing-components/fifthHome";
 import { languageEnum, languages } from "@/app/i18n/settings";
 import { PAGE_ID } from "@/config";
 import { getData } from "@/services/getData";
@@ -22,7 +21,7 @@ export default function HomeAdmin() {
     []
   );
   const pageId = PAGE_ID;
-  const Sections = [FirstHome, SecondHome, ThirdHome, FourthHome];
+  const Sections = [SecondHome, ThirdHome, FourthHome, FifthHome];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -91,7 +90,7 @@ export default function HomeAdmin() {
                     ))}
                   </div>
                 ))}
-                <SeventhHome
+                {/* <SeventhHome
                   lng={languageEnum.ru}
                   pageId={pageId}
                   section={
@@ -99,7 +98,7 @@ export default function HomeAdmin() {
                       ?.userData?.sections[4]!
                   }
                   isAdmin={isAuth}
-                />
+                /> */}
               </div>
             </div>
           )}

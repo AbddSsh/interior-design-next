@@ -1,6 +1,6 @@
 "use client";
 
-import { X } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { ILangPageProps } from "@/types/user";
 import { useEffect, useState } from "react";
 import BurgerLanguage from "./burgerLanguage";
@@ -43,7 +43,7 @@ const Burger: React.FC<ILangPageProps> = ({ lng }) => {
             }}
           >
             <div className="burger-hide-btn" onClick={handleBurger}>
-              <X width={30} height={30} stroke="#88C2CE" />
+              <ArrowRight width={50} height={50} stroke="#fff" />
             </div>
           </div>
           <div className="burger__content">
