@@ -3,7 +3,6 @@
 import { MAIN_PAGE_ANIMATION } from "@/types/animation";
 import { ILangPageProps } from "@/types/user";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import styles from "../design-styles/FirstHome.module.scss";
 import { useTranslation } from "@/app/i18n/client";
 
@@ -20,11 +19,7 @@ const FirstHome: React.FC<ILangPageProps> = ({ lng }) => {
       className={`${styles.wrapper}`}
     >
       <div className={`${styles.content} container`}>
-        <motion.div
-          custom={custom++}
-          variants={MAIN_PAGE_ANIMATION.animationLeft}
-          className={styles.left}
-        >
+        <div className={styles.left}>
           <div className={styles.texts}>
             <h2 className={styles.title}>
               {t("HomePage.FirstHome.first_title.regular")}{" "}
@@ -43,21 +38,8 @@ const FirstHome: React.FC<ILangPageProps> = ({ lng }) => {
               </p>
             </div>
           </div>
-        </motion.div>
-        <motion.div
-          custom={custom++}
-          variants={MAIN_PAGE_ANIMATION.animationRight}
-          className={styles.image__wrapper}
-        >
-          {/* <Image
-            className={styles.image}
-            src="/public/first-home-bg.png"
-            alt="image"
-            width={1000}
-            height={1000}
-            priority
-          /> */}
-        </motion.div>
+        </div>
+        <div className={styles.image__wrapper} />
       </div>
     </motion.div>
   );
