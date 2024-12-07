@@ -5,6 +5,7 @@ import Head from "next/head";
 import { ReactNode } from "react";
 import { languages } from "../i18n/settings";
 import "./../styles/global.scss";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Interior Design | Gulen",
@@ -53,6 +54,18 @@ const RootLayout: React.FC<RootLayoutProps> = ({
         <Head>
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PLPQ9WCDYM"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PLPQ9WCDYM');
+          `}
+        </Script>
         <body>
           <main className="main__layout">
             <div>{children}</div>
