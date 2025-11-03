@@ -1,7 +1,6 @@
 import { IHomePageProps } from "@/types/user";
 import { dir } from "i18next";
 import { Metadata } from "next";
-import Head from "next/head";
 import { ReactNode } from "react";
 import { languages } from "../i18n/settings";
 import "./../styles/global.scss";
@@ -51,22 +50,65 @@ const RootLayout: React.FC<RootLayoutProps> = ({
   return (
     <>
       <html lang={lng} dir={dir(lng)} prefix="og: http://ogp.me/ns#">
-        <Head>
+        <head>
           <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-PLPQ9WCDYM"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+
+          {/* Facebook Pixel */}
+          {/* Meta Pixel Code */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '837568149003936');
+                fbq('track', 'PageView');
+              `,
+            }}
+          />
+          {/* Meta Pixel (noscript) */}
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src="https://www.facebook.com/tr?id=837568149003936&ev=PageView&noscript=1"
+              alt=""
+            />
+          </noscript>
+        </head>
+
+        <body>
+          {/* Google Analytics */}
+          <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-PLPQ9WCDYM"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-PLPQ9WCDYM');
           `}
-        </Script>
-        <body>
+          </Script>
+
+          {/* Facebook Pixel (noscript) */}
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src="https://www.facebook.com/tr?id=837568149003936&ev=PageView&noscript=1"
+              alt=""
+            />
+          </noscript>
+
           <main className="main__layout">
             <div>{children}</div>
           </main>
