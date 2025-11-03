@@ -86,7 +86,9 @@ const FifthHome: React.FC<IHomePageProps> = ({
                       alt={block?.files[0]?.alts[0]?.text || "image"}
                       width={1500}
                       height={1500}
-                      priority
+                      loading={index === 0 ? "eager" : "lazy"}
+                      quality={85}
+                      priority={index === 0}
                     />
                   </div>
                   {isAdmin && pageId && (
